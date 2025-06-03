@@ -1,0 +1,72 @@
+<!DOCTYPE html>
+<html lang="en">
+
+<head>
+  <meta charset="UTF-8">
+  <meta name="viewport" content="width=device-width, initial-scale=1.0">
+  <title>Countries</title>
+  <link rel="preconnect" href="https://fonts.googleapis.com">
+  <link rel="preconnect" href="https://fonts.gstatic.com" crossorigin>
+  <link
+    href="https://fonts.googleapis.com/css2?family=Nunito+Sans:opsz,wdth,wght,YTLC@6..12,75..125,200..1000,440..540&display=swap"
+    rel="stylesheet">
+  <link rel="stylesheet" href="./css/main.css">
+</head>
+
+<body>
+  
+  <div class="loading">
+    <div class="loader"></div>
+  </div>
+
+  <header>
+    <nav class="container">
+      <h1>Where in the world?</h1>
+      <div class="darkMode"><span></span> Dark Mode</div>
+    </nav>
+  </header>
+
+  <main>
+    <section class="search">
+      <div class="container search--wrapper">
+        <form class="search--form">
+
+          <div>
+            <label for="search"><img src="./images/search.svg" alt="search"></label>
+            <input type="search" id="search" placeholder="Search for a country…">
+          </div>
+          <select>
+            <option disabled selected value="all">Filter by Region</option>
+            <option value="Africa">Africa</option>
+            <option value="America">America</option>
+            <option value="Asia">Asia</option>
+            <option value="Europe">Europe</option>
+            <option value="Oceania">Oceania</option>
+          </select>
+        </form>
+
+        <ul class="search--menu"></ul>
+
+        <ul class="search--pagination">
+          <li class="back" onclick="backNextPagination('back')">></li>
+
+          <li>
+            <ul>
+
+            </ul>
+          </li>
+          <li class="next" onclick="backNextPagination('next')">></li>
+        </ul>
+      </div>
+
+
+    </section>
+
+
+  </main>
+
+  <script src="./Js/main.js"></script>
+  <script src="./Js/index.js"></script>
+</body>
+
+</html>

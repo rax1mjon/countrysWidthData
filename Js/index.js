@@ -25,7 +25,7 @@ const getData = async (url, cardList) => {
     let fetchData = await fetch(url);
 
     if (!fetchData.ok) {
-      throw new Error(`HTTP error! => "${data.status}"`);
+      throw new Error(`HTTP error! => "${fetchData.status}"`);
     }
 
     let data = await fetchData.json();
@@ -98,6 +98,12 @@ async function searchFunction() {
       country.name.common.toLocaleLowerCase().trim().includes(searchText)
     );
 
+    if (searchText == "") {
+      getData(
+        `https://ap-countries-api.vercel.app/all?page=${activePage}&limit=8`,
+        cardList
+      );
+    }
     cardList.innerHTML = "";
     newSearchData.length
       ? newSearchData.forEach((country, i) => getCard(i, country, cardList))

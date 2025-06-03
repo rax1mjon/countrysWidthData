@@ -18,6 +18,10 @@ async function allData() {
   try {
     let fetchData = await fetch("https://ap-countries-api.vercel.app/all");
 
+    if (!fetchData.ok) {
+      throw new Error(`HTTP error! => "${fetchData.status}"`);
+    }
+
     let data = await fetchData.json();
     return data.data;
   } catch (error) {
