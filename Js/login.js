@@ -20,5 +20,19 @@ form.addEventListener("submit", async (event) => {
     if (!postData.ok) throw new Error(postData.message);
 
     location = "./home.html";
-  } catch (error) {}
+  } catch (error) {
+    let errorMessage = document.querySelector(".errorMessage");
+    errorMessage.classList.remove("errorNone");
+    setTimeout(() => {
+      errorMessage.classList.add("errorNone");
+    }, 3000);
+
+    let errorBtn = document.querySelector(".errorMessage span");
+
+    errorBtn.addEventListener("click", () => {
+      errorMessage.classList.add("errorNone");
+    });
+
+    console.log(error.message);
+  }
 });

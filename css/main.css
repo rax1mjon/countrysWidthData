@@ -667,3 +667,69 @@ nav div span {
   background-color: rgba(147, 51, 234, 1);
   transform: scale(0.95);
 }
+
+.errorMessage {
+  position: fixed;
+  top: 20px;
+  left: 50%;
+  transform: translateX(-50%);
+  display: flex;
+  justify-content: center;
+  align-items: center;
+  flex-direction: column;
+  width: 100%;
+  max-width: 320px;
+  padding: 20px;
+  background-color: rgba(255, 235, 238, 0.212);
+  border-radius: 0.75rem;
+  box-shadow: 0px 2px 10px rgba(0, 0, 0, 0.1);
+  border: 1px solid rgba(220, 38, 38, 0.5);
+  background-image: linear-gradient(
+    to right,
+    rgba(211, 114, 128, 0.37),
+    rgba(71, 17, 25, 0.336),
+    rgba(211, 114, 128, 0.37)
+  );
+
+  backdrop-filter: blur(5px);
+  transition: 1s ease;
+}
+
+.errorNone {
+  top: -150%;
+}
+
+.errorMessage span {
+  position: absolute;
+  right: 20px;
+  top: 50%;
+  transform: translateY(-50%);
+  cursor: pointer;
+  font-size: 1.5rem;
+  color: rgba(220, 38, 38, 1);
+
+  padding: 2px 9px;
+  background-color: rgba(255, 255, 255, 0.479);
+  border-radius: 4px;
+  box-shadow: 0px 2px 5px rgba(0, 0, 0, 0.1);
+  border: 1px solid rgba(220, 38, 38, 0.678);
+  transition: 0.3s;
+  font-weight: 600;
+  font-size: 1.125rem;
+  line-height: 1.75rem;
+  color: #000000;
+}
+
+.errorMessage span:hover {
+  color: rgba(221, 13, 13, 0.966);
+  transform: translateY(-50%) scale(1.1);
+}
+
+.errorMessage span:active {
+  transform: translateY(-50%) scale(0.95);
+}
+
+.errorMessage p {
+  color: rgba(221, 13, 13, 0.966);
+  font-size: 0.875rem;
+}
