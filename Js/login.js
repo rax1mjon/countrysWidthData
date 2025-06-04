@@ -25,7 +25,7 @@ form.addEventListener("submit", async (event) => {
     errorMessage.classList.remove("errorNone");
     setTimeout(() => {
       errorMessage.classList.add("errorNone");
-    }, 3000);
+    }, 5000);
 
     let errorBtn = document.querySelector(".errorMessage span");
 
